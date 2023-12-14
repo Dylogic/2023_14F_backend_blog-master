@@ -17,7 +17,7 @@ class Authenticate extends Middleware
     }
 
     // API
-    protected function unauthenticated(Request $request, array $guards) {
+    protected function unauthenticated($request, array $guards) {
         $baseController = new BaseController();
         abort($baseController->sendError('Unauthorized', ['error' => 'Sikertelen bejelentkezés!'], 401));
     }
